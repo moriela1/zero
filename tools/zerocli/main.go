@@ -12,21 +12,24 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/dywoq/zero/tools/zerocli/internal/cmd"
+	"github.com/dywoq/zero/tools/zerocli/internal/root"
 )
 
+// die Checks if err is not nil.
+// If it's true, it prints a formatted message and exits with code 1.
+func die(err error, format string, v ...any) {
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "ERROR: %v\n", fmt.Sprintf(format, v...))
+		os.Exit(1)
+	}
+}
+
 func main() {
-	cmd := cmd.Parser{}
-	
-	file, err := os.Open("help.toml")
-	if err != nil {
-		panic(err)
-	}
-	
-	conf, err := cmd.Parse(file)
-	if err != nil {
-		panic(err)
-	}
-	
-	fmt.Printf("conf: %v\n", conf)
+	// Search for root configuration first.
+	rootFile, err := os.Open("zerocli.toml")
+	die(err, "Failed to open zerocli.toml configuration file: %v", err)
+
+	rootParser := root.ConfigParser{}
+	_, err = rootParser.Parse(rootFile)
+	die(err, "Failed to parse zerocli.toml configuration file: %v", err)
 }

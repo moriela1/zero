@@ -29,7 +29,7 @@ type Config struct {
 	Script      string `toml:"script"`
 }
 
-// Parser represents the parser of the commands configuration files.
+// Parser represents the parser of the command configuration files.
 type Parser struct{}
 
 // Parse parses .TOML config from r, decoding.
