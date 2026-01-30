@@ -7,15 +7,13 @@ pub(crate) mod panic;
 #[cfg(target_arch = "x86_64")]
 #[unsafe(no_mangle)]
 pub extern "win64" fn efi_main() -> ! {
-    use crate::core::entry;
-    entry::entry();
+    core::entry();
     loop {}
 }
 
 #[cfg(target_arch = "aarch64")]
 #[unsafe(no_mangle)]
 pub extern "C" fn efi_main() -> ! {
-    use crate::core::entry;
-    entry::entry();
+    core::entry();
     loop {}
 }
