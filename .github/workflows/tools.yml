@@ -2,9 +2,9 @@ name: Tools
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-and-test:
@@ -15,13 +15,24 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v6
         with:
-          go-version: '1.25.6'
+          go-version: "1.25.6"
 
       - name: Find tools directories with go.mod
         id: find-tools
         run: |
           dirs=$(find tools/* -maxdepth 1 -type f -name "go.mod" -exec dirname {} \;)
           echo "dirs=$dirs" >> $GITHUB_OUTPUT
+
+      - name: Install golangci-lint [LINTING 1/2]
+        run: |
+          curl -sSfL https://golangci-lint.run/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.8.0
+
+      - name: Linting [LINTING 2/2]
+        run: |
+          for dir in ${{ steps.find-tools.outputs.dirs }}; do
+            echo "Linting $dir"
+            (cd "$dir" && golangci-lint run ./...)
+          done
 
       - name: Build
         run: |
