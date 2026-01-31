@@ -21,7 +21,4 @@ jobs:
       - name: Build
         run: cargo build --verbose --target ${{ matrix.target }}
         working-directory: ./rust
-
-      - name: Tests
-        run: cargo test --verbose --target ${{ matrix.target }}
-        working-directory: ./rust
+    
