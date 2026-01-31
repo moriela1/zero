@@ -9,7 +9,7 @@ Below, you can see the roadmap of the project (may change):
 | Name                             | Status          | Languages |
 | -------------------------------- | --------------- | --------- |
 | Automation tools                 | Being developed | Go        |
-| Bootloader                       | Not ready       | Rust      |
+| Bootloader                       | Being developed | Rust      |
 | Kernel                           | Not ready       | Rust      |
 | Public SDKs, libraries and tools | Not ready       | C/C++     |
 
