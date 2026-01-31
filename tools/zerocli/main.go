@@ -11,6 +11,8 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/dywoq/zero/tools/zerocli/internal/cmd"
 )
 
 // die Checks if err is not nil.
@@ -23,5 +25,6 @@ func die(err error, format string, v ...any) {
 }
 
 func main() {
-
+	err := cmd.Root().Execute()
+	die(err, "Failed to execute root command: %v", err)
 }

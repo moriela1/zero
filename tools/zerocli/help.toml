@@ -1,6 +1,0 @@
-name = "help"
-description = "See available commands"
-flags = [
-    {name = "list", short = "l", description = "Show it in list"}
-]
-script = "./help.lua"
