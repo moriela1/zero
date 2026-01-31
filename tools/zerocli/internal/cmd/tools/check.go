@@ -23,6 +23,8 @@ type requiredTool struct {
 
 var requiredTools = []*requiredTool{
 	{"Rust compiler", "Needed for compilation of code inside rust/ folder", "rustc"},
+	{"GCC compiler", "Needed for C code compilation", "gcc"},
+	{"G++ compiler", "Needed for C++ code compilation", "g++"},
 	{"Cargo", "Package management inside rust/", "cargo"},
 	{"CMake", "Package management for C/C++", "cmake"},
 	{"Xorriso", "Needed for .ISO image generation", "xorriso"},
