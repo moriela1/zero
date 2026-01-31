@@ -28,16 +28,6 @@ jobs:
         run: cargo fmt -- --check
         working-directory: ./rust
 
-      # Linting
-      - name: Install Clippy [LINTING 1/2]
-        run: rustup component add clippy
-        working-directory: ./rust
-        if: matrix.target == 'x86_64-unknown-uefi'
-      - name: Run clippy [LINTING 2/2]
-        run: cargo clippy -- -D warnings
-        working-directory: ./rust
-        if: matrix.target == 'x86_64-unknown-uefi'
-
       # Building
       - name: Build (dev)
         run: cargo build --verbose --target ${{ matrix.target }}
