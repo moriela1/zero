@@ -1,6 +1,7 @@
 # =============================
 # Settings
 # =============================
+
 # Tools
 ISOGEN := xorrisofs
 
@@ -70,16 +71,16 @@ all: clean $(TARGET)
 
 # Create EFI FAT image
 $(EFI_IMG): $(KERNEL_EFI_TOTAL) $(BOOTLOADER_EFI_TOTAL)
-	dd if=/dev/zero of=$(EFI_IMG) bs=1M count=10
-	mkfs.vfat -F 12 $(EFI_IMG)
-	mmd -i $(EFI_IMG) ::/EFI
-	mmd -i $(EFI_IMG) ::/EFI/BOOT
-	mcopy -i $(EFI_IMG) $(BOOTLOADER_EFI_TOTAL) ::/EFI/BOOT/
-	mcopy -i $(EFI_IMG) $(KERNEL_EFI_TOTAL) ::/EFI/BOOT/
+	@dd if=/dev/zero of=$(EFI_IMG) bs=1M count=10
+	@mkfs.vfat -F 12 $(EFI_IMG)
+	@mmd -i $(EFI_IMG) ::/EFI
+	@mmd -i $(EFI_IMG) ::/EFI/BOOT
+	@mcopy -i $(EFI_IMG) $(BOOTLOADER_EFI_TOTAL) ::/EFI/BOOT/
+	@mcopy -i $(EFI_IMG) $(KERNEL_EFI_TOTAL) ::/EFI/BOOT/
 
 # Main target - create ISO with EFI image
 $(TARGET): $(EFI_IMG)
-	$(ISOGEN) -J -R -V "Zero" \
+	@$(ISOGEN) -J -R -V "Zero" \
 		-eltorito-alt-boot \
 		-e efi.img \
 		-no-emul-boot \
@@ -89,26 +90,26 @@ $(TARGET): $(EFI_IMG)
 
 # Directories
 $(EFI_DIR): $(BUILD)
-	mkdir $(EFI_DIR) -p
+	@mkdir $(EFI_DIR) -p
 $(ISO_DIR): $(BUILD)
-	mkdir $(ISO_DIR) -p
-	mkdir $(ISO_DIR)/EFI
-	mkdir $(ISO_DIR)/EFI/BOOT
+	@mkdir $(ISO_DIR) -p
+	@mkdir $(ISO_DIR)/EFI
+	@mkdir $(ISO_DIR)/EFI/BOOT
 
 # Compile kernel/bootloader, putting inside EFI_DIR folder
 __cargo:
-	cd rust && cargo build $(CARGO_FLAGS)
+	@cd rust && cargo build $(CARGO_FLAGS)
 $(KERNEL_EFI_TOTAL): __cargo $(ISO_DIR)
-	mv $(KERNEL_EFI_COMPILED) $(KERNEL_EFI_TOTAL)
+	@mv $(KERNEL_EFI_COMPILED) $(KERNEL_EFI_TOTAL)
 $(BOOTLOADER_EFI_TOTAL): __cargo $(ISO_DIR)
-	mv $(BOOTLOADER_EFI_COMPILED) $(BOOTLOADER_EFI_TOTAL)
+	@mv $(BOOTLOADER_EFI_COMPILED) $(BOOTLOADER_EFI_TOTAL)
 
 $(BUILD):
-	mkdir $(BUILD) -p
+	@mkdir $(BUILD) -p
 
 clean:
-	rm $(BUILD) -fr
+	@rm $(BUILD) -fr
 
 # Run ISO file in qemu
 qemu: clean $(TARGET)
-	$(QEMU) $(QEMU_FLAGS)
+	@$(QEMU) $(QEMU_FLAGS)
