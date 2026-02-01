@@ -27,7 +27,9 @@ Why do I need to create another operating system? Well.. there are lot of reason
 I wanted something like MacOS, but open-source and made for everyone,
 including end-users and developers.
 
-2. To be honest, their SDKs are really old and doesn't fit modern standards. Every time I work with `<unistd.h>`, `<windows.h>`, I had to make sure their symbols don't collide with mine. Yeah, of course, modern alternatives exist, **but these alternatives often make the development worse**. This frustration motivates me to stand up and create something better, than these.
+2. To be honest, their SDKs are really old and doesn't fit modern standards. Every time I work with `<unistd.h>`, `<windows.h>` (not in Zero) in my own C/C++ standard library implementations, I had to make sure their symbols don't collide with mine. Unfortunately, the C/C++ standard library requires support of POSIX/Windows to make it work on a lot of machines, so I have to use them in my implementations.
+
+And, yeah, POSIX - I dislike it and I won't support it in my OS.
 
 3. Just educational project for myself :>
    Even it won't become popular and widely adopted, I'll keep doing it because I like it.
