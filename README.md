@@ -8,7 +8,7 @@ Below, you can see the roadmap of the project (may change):
 
 | Name                             | Status          | Languages |
 | -------------------------------- | --------------- | --------- |
-| Scripts                          | Being developed | Lua       |
+| Scripts                          | Almost done     | Lua       |
 | Automation tools                 | Being developed | Go        |
 | Bootloader                       | Being developed | Rust      |
 | Kernel                           | Not ready       | Rust      |
