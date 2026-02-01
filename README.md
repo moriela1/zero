@@ -6,13 +6,13 @@ Zero - is an open-source operating system, written in Rust. Its goal is to be AB
 
 Below, you can see the roadmap of the project (may change):
 
-| Name                             | Status          | Languages |
-| -------------------------------- | --------------- | --------- |
-| Scripts                          | Almost done     | Lua       |
-| Automation tools                 | Being developed | Go        |
-| Bootloader                       | Being developed | Rust      |
-| Kernel                           | Not ready       | Rust      |
-| Public SDKs, libraries and tools | Not ready       | C/C++     |
+| Name                             | Status          | Languages     |
+| -------------------------------- | --------------- | ------------- |
+| Scripts                          | Almost done     | Lua           |
+| Automation tools                 | Being developed | Go            |
+| Bootloader                       | Being developed | Rust          |
+| Kernel                           | Not ready       | Rust/Assembly |
+| Public SDKs, libraries and tools | Not ready       | C/C++         |
 
 # Motivation
 
