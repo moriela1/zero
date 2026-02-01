@@ -11,7 +11,7 @@
 -- This module contains utility functions that automatically
 -- handle commands management.
 
-local log = require("log")
+local log = require("scripts.log")
 
 local M = {}
 
