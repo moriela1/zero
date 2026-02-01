@@ -44,7 +44,7 @@ end
 ---
 --- @param message any A message to print.
 function M.info(message)
-    print("[zero] " .. colors.blue .. "info: " .. colors.reset .. message)
+    print("[zero] " .. colors.green .. "info: " .. colors.reset .. message)
 end
 
 return M

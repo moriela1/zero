@@ -49,7 +49,7 @@ function M.run(cmd, args)
     exit_code = exit_code or -1  -- fallback if nil
 
     if exit_code ~= 0 then
-        log.error("Failed to run " .. cmd_str .. " (exit code " .. tostring(exit_code) .. "):\n" .. output)
+        log.error("Failed to run \"" .. cmd_str .. "\" (exit code " .. tostring(exit_code) .. "):\n" .. output)
     end
 
     return output, exit_code
