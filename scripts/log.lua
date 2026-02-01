@@ -6,6 +6,10 @@
 -- Repository:
 -- https://github.com/dywoq/zero
 
+-- Module overview
+--
+-- Logging functions with colored prefixes
+
 local colors = {
     reset = "\27[0m",
     red   = "\27[31m",
@@ -19,16 +23,20 @@ local colors = {
 
 local M = {}
 
+--- Prints an error message into console, and exits the program with code 1,
+--- outputting debug trace.
 function M.error(message)
     print("[zero] " .. colors.red .. "error: " .. colors.reset .. message)
     print(debug.traceback())
     os.exit(1)
 end
 
+--- Prints an warning message into console.
 function M.warn(message)
     print("[zero] " .. colors.yellow .. "warn: " .. colors.reset .. message)
 end
 
+--- Prints an info message into console.
 function M.info(message)
     print("[zero] " .. colors.green .. "info: " .. colors.reset .. message)
 end
