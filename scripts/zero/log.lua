@@ -25,6 +25,8 @@ local colors = {
 
 --- Prints an error with message.
 --- Causes the program to exit with code 1, and outputs debug trace.
+---
+--- @param message any A message to print.
 function M.error(message)
     print("[zero] " .. colors.red .. "error: " .. colors.reset .. message)
     print(debug.traceback())
@@ -32,11 +34,15 @@ function M.error(message)
 end
 
 --- Prints a warning into the console.
+---
+--- @param message any A message to print.
 function M.warn(message)
     print("[zero] " .. colors.yellow .. "warn: " .. colors.reset .. message)
 end
 
 --- Prints an info message into the console.
+---
+--- @param message any A message to print.
 function M.info(message)
     print("[zero] " .. colors.blue .. "info: " .. colors.reset .. message)
 end
