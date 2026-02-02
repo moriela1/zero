@@ -15,36 +15,38 @@ env.add_requirement("BUILD_TYPE")
 env.check()
 
 local build_type = env.get("BUILD_TYPE")
+local target = "x86_64-unknown-uefi"
+local iso_folder_path = "build/iso-x86_64"
 
--- Create build file
-log.info("Creating \"build\" folder and its subdirectories...")
+-- Create build directory
+log.info("Creating \"build\" folder and its subdirectories for x86_64...")
 cmd.run("mkdir", { "build", "-p" })
-cmd.run("mkdir", { "build/iso", "-p" })
-cmd.run("mkdir", { "build/iso/EFI", "-p" })
-cmd.run("mkdir", { "build/iso/EFI/BOOT", "-p" })
+cmd.run("mkdir", { iso_folder_path, "-p" })
+cmd.run("mkdir", { iso_folder_path .. "/EFI", "-p" })
+cmd.run("mkdir", { iso_folder_path .. "/EFI/BOOT", "-p" })
 
 -- Build kernel/bootloader
-log.info("Beginning to build kernel + bootloader...")
-local build_flags = { "build", "--target", "x86_64-unknown-uefi", "--manifest-path", "rust/Cargo.toml" }
+log.info("Beginning to build kernel + bootloader for target: " .. target .. "...")
+local build_flags = { "build", "--target", target, "--manifest-path", "rust/Cargo.toml" }
 if build_type == "release" then
     table.insert(build_flags, "--release")
 end
 cmd.run("cargo", build_flags)
 
-log.info("Successfully built kernel + bootloader.")
+log.info("Successfully built kernel + bootloader for x86_64.")
 
 log.info("Creating FAT image...")
 
 -- Take out compiled kernel, and bootloader files from rust/target
-local kernel_compiled = "rust/target/x86_64-unknown-uefi/" .. build_type .. "/zero_kernel.efi"
-local bootloader_compiled = "rust/target/x86_64-unknown-uefi/" .. build_type .. "/zero_bootloader.efi"
-local kernel_total = "build/iso/EFI/BOOT/kernel.EFI"
-local bootloader_total = "build/iso/EFI/BOOT/BOOTX64.EFI"
-cmd.run("cp", { kernel_compiled, kernel_total })
-cmd.run("cp", { bootloader_compiled, bootloader_total })
+local kernel_compiled = string.format("rust/target/%s/%s/zero_kernel.efi", target, build_type)
+local bootloader_compiled = string.format("rust/target/%s/%s/zero_bootloader.efi", target, build_type)
+local kernel_total = iso_folder_path .. "/EFI/BOOT/kernel.EFI"
+local bootloader_total = iso_folder_path .. "/EFI/BOOT/BOOTX64.EFI"
+cmd.run("mv", { kernel_compiled, kernel_total })
+cmd.run("mv", { bootloader_compiled, bootloader_total })
 
 -- Create the FAT image, and copy kernel/bootloader to put it into it
-local esp_path = "build/esp.img"
+local esp_path = "build/esp-x86_64.img"
 cmd.run("dd", { "if=/dev/zero", "of=" .. esp_path, "bs=1M", "count=16" })
 cmd.run("mkfs.fat", { esp_path })
 cmd.run("mmd", { "-i", esp_path, "::/EFI" })
@@ -56,12 +58,15 @@ log.info("Successfully created FAT image.")
 
 -- Build .ISO image
 log.info("Building ISO image...")
-local iso_path = "build/zero.iso"
-cmd.run("xorriso", { "-as", "mkisofs",
+local iso_path = "build/zero-x86_64.iso"
+cmd.run("cp", { esp_path, iso_folder_path .. "/esp-x86_64.img" })
+log.info("Building ISO image...")
+cmd.run("xorriso", { 
+    "-as", "mkisofs",
     "-o", iso_path,
-    "-e", "EFI/BOOT/BOOTX64.EFI",
+    "-e", "esp-x86_64.img",  -- Point to FAT image, not .EFI file
     "-no-emul-boot",
-    "build/iso"
+    iso_folder_path
 })
 log.info("Successfully built ISO image.")
 
