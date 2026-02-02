@@ -12,7 +12,7 @@ Below, you can see the roadmap of the project (may change):
 | Automation tools                 | Being developed | Go            |
 | Bootloader                       | Being developed | Rust          |
 | Kernel                           | Not ready       | Rust/Assembly |
-| Public SDKs, libraries and tools | Not ready       | C/C++         |
+| Public SDKs, libraries and tools | Not ready       | C        |
 
 # Motivation
 
