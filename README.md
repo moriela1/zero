@@ -1,18 +1,19 @@
 # Zero
 
-Zero - is an open-source operating system, written in Rust. Its goal is to be ABI stable, to support the most-used architectures and provide modern, clean SDKs and tools.
+Zero - is an open-source operating system, written in C23. Its goal is to be ABI stable, to support the most-used architectures and provide modern, clean SDKs and tools.
 
 # Roadmap
 
 Below, you can see the roadmap of the project (may change):
 
-| Name                             | Status          | Languages     |
-| -------------------------------- | --------------- | ------------- |
-| Scripts                          | Almost done     | Lua           |
-| Automation tools                 | Being developed | Go            |
-| Bootloader                       | Being developed | Rust          |
-| Kernel                           | Not ready       | Rust/Assembly |
-| Public SDKs, libraries and tools | Not ready       | C        |
+| Name                             | Status      | Languages  |
+| -------------------------------- | ----------- | ---------- |
+| Scripts                          | Almost done | Lua        |
+| Bare-metal standard library      | Not ready   | C          |
+| Automation tools                 | Not ready   | Go         |
+| Bootloader                       | Not ready   | C          |
+| Kernel                           | Not ready   | C/Assembly |
+| Public SDKs, libraries and tools | Not ready   | C          |
 
 # Motivation
 
