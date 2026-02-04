@@ -9,7 +9,7 @@
 -- Module overview
 --
 -- This module contains utility functions that automatically
--- handle commands management.
+-- handle environment variable check.
 
 local M = {}
 
