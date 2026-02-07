@@ -1,11 +1,10 @@
 [[project]]
 path = ""
 version = "0.10.1"
-assembler = "nasm"
+assembler = "gas"
 instruction_set = "x86-64"
 
 [project.opts]
 compiler = ""
-compile_flags_txt = []
 diagnostics = true
 default_diagnostics = false
