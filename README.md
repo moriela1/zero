@@ -1,3 +1,3 @@
 # Zero
 
-Zero - is a protected-mode operating system, written in C23 + ASM.
+Zero - is a custom C23 standard library. Its goal to be ABI stable, minimal but powerful.
