@@ -6,12 +6,14 @@
 // The repository:
 // https://github.com/dywoq/zero
 
+#ifndef _ZERO_SYS_ERR_H
+#define _ZERO_SYS_ERR_H
+
 #include <zero/types.h>
 
-[[noreturn]]
-void
-_start() {
-    while (true) {
-        __asm volatile("hlt");
-    }
-}
+// Represents the error code enumeration.
+enum zero_sys_err : zero_ushort_t {
+    ZERO_SYS_OK = 0,
+};
+
+#endif
