@@ -27,7 +27,7 @@ _start:
     int 0x13           ; Call BIOS
 
     ; Jump to stage 1
-    jmp 0x0900:0x0000
+    jmp 0x9000:0x0000
 
     ; Unreachable
     hlt
