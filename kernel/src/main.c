@@ -1,3 +1,7 @@
-void _start() {
-    while (1);
+[[noreturn]]
+void
+_start() {
+    while (true) {
+        __asm volatile("hlt");
+    }
 }

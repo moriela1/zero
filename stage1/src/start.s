@@ -7,7 +7,7 @@
 ; https://github.com/dywoq/zero
 
 bits 16
-org 0x9000
+org 0x8000
 
 ; Represents the entry of stage 1, which setups necessary components,
 ; and enters protected mode, starting kernel.
@@ -25,13 +25,13 @@ _start:
 
     ; Load kernel DPA
 kernel_dap:
-    db 0 ; Size of DAP
+    db 0x10 ; Size of DAP
     db 0 ; Unused
     dw 1 ; How much sectors we read (512 bytes = 1 sector. If kernel grows, we adjust it)
-    dw 0x0 ; Offset
+    dw 0x0000 ; Offset
     dw 0x1000 ; Segment
     dq 2 ; Lower bits of LBA address
-
+    
     ; Load kernel.bin from disk
     mov ah, 0x42       ; Extended read
     mov dl, 0x80       ; 0x80 = First HDD
@@ -54,10 +54,10 @@ pm_start:
     mov fs, ax
     mov gs, ax
     mov ss, ax
-    mov esp, 0x0FFFC
+    mov esp, 0x90000
 
     ; Jump to kernel ;>
-    jmp 0x1000:0x0
+    jmp 0x10000
 
 bits 32
 %include "src/gdt.s"

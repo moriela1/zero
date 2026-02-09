@@ -27,8 +27,8 @@ _start:
     int 0x13           ; Call BIOS
 
     ; Jump to stage 1
-    jmp 0x9000:0x0000
-
+    jmp 0x0000:0x8000
+    
     ; Unreachable
     hlt
 
@@ -36,8 +36,8 @@ stage1_dap:
     db 0 ; Size of DAP
     db 0 ; Unused (I'm not even sure what does this mean...)
     dw 1 ; How much sectors we read (512 bytes = 1 sector. If the stage 1 grows, we adjust it)
-    dw 0x9000 ; Offset
-    dw 0x0000 ; Segment
+    dw 0x0000 ; Offset
+    dw 0x0800 ; Segment
     dq 1 ; Lower bits of LBA address
 
     
