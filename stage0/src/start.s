@@ -14,6 +14,7 @@ _start:
 
     ; We load stage0.bin from disk, using LBA (CHS is hell, don't use it)
     mov ah, 0x42       ; Extended read
+    mov dl, 0x80       ; 0x80 = First HDD
     mov si, stage1_dap ; Load stage 1 DAP
     int 0x13           ; Call BIOS
 
