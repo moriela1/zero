@@ -1,3 +1,3 @@
 # Zero
 
-Zero - is a custom C23 standard library. Its goal to be ABI stable, minimal but powerful.
+Zero - is an x86 operating system, which is made in protected mode only. 
