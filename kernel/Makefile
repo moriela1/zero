@@ -2,6 +2,7 @@ CC := gcc
 CFLAGS := -m32 \
           -ffreestanding \
           -Iinc/ \
+          -I../shared/inc/ \
           -Wall -Wextra \
           -fno-pie -fno-pic \
           --std=c23
