@@ -4,7 +4,7 @@
 -- https://www.apache.org/licenses/LICENSE-2.0
 --
 -- Repository:
--- https://github.com/dywoq/lumen
+-- https://github.com/dywoq/zero
 
 -- Module overview
 --
