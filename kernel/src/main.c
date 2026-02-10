@@ -7,6 +7,7 @@
 // https://github.com/dywoq/zero
 
 #include <bios.h>
+#include <mem.h>
 #include <stdint.h>
 #include <zero.h>
 
