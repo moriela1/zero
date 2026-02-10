@@ -25,10 +25,7 @@ void _start(void) {
                      : "ax", "memory");
 
     bios_tt_str_output("Loading system...\n");
-
     bios_vga_mode_switch(0x13);
-
-    zero_panic("HI!");
 
     while (1)
         ;

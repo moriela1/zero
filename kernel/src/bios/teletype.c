@@ -6,7 +6,9 @@
 // The repository:
 // https://github.com/dywoq/zero
 
-void bios_tt_output(char c) {
+#include <types.h>
+
+void bios_tt_output(byte_t c) {
     __asm__ volatile("movb %0, %%al\n\t"
                      "movb $0x0E, %%ah\n\t"
                      "int $0x10"

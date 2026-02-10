@@ -9,6 +9,8 @@
 #ifndef _BIOS_TELETYPE_H
 #define _BIOS_TELETYPE_H
 
+#include <types.h>
+
 // A thin wrapper around BIOS interruption 0x10,
 // which prints a single character into the screen.
 //
@@ -17,7 +19,7 @@
 //
 // Returns:
 // - None
-void bios_tt_output(char c);
+void bios_tt_output(byte_t c);
 
 // Iterates over given immutable string,
 // printing every character with bios_tt_output.
