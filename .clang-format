@@ -1,7 +1,7 @@
 BasedOnStyle: LLVM
 IndentWidth: 4
+AlwaysBreakAfterReturnType: All
 BinPackParameters: false
 BinPackArguments: false
 AlignAfterOpenBracket: BlockIndent
 ColumnLimit: 120
-AllowShortFunctionsOnASingleLine: None

@@ -6,28 +6,11 @@
 // The repository:
 // https://github.com/dywoq/zero
 
-#include <bios.h>
-#include <mem.h>
-#include <stdint.h>
-#include <zero.h>
+[[noreturn, gnu::section(".kernel_init")]] void
+_start();
 
-[[gnu::section(".kernel_init")]] void _start(void);
-void _start(void) {
-    __asm__ volatile("cli\n"
-                     "xorw %%ax, %%ax\n"
-                     "movw %%ax, %%ds\n"
-                     "movw %%ax, %%es\n"
-                     "movw $0x1900, %%ax\n"
-                     "movw %%ax, %%ss\n"
-                     "movw $0xFFFF, %%sp\n"
-                     "sti\n"
-                     :
-                     :
-                     : "ax", "memory");
-
-    bios_tt_str_output("Loading system...\n");
-    bios_vga_mode_switch(0x13);
-
-    while (1)
-        ;
+[[noreturn]]
+void
+_start() {
+   while (1);
 }

@@ -1,11 +1,11 @@
 CC := gcc
-CFLAGS := -m16 \
+CFLAGS := -m32 \
           -ffreestanding \
           -Iinc/ \
+          -I../shared/inc/ \
           -Wall -Wextra \
           -fno-pie -fno-pic \
-          --std=c23 \
-          -nostdlib
+          --std=c23
 
 LD := ld
 LD_FLAGS := -m elf_i386 -T linker.ld

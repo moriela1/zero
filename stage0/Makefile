@@ -5,7 +5,7 @@ ASM_FLAGS := -f bin
 
 BUILD := .build
 
-TARGET := $(BUILD)/boot.bin
+TARGET := $(BUILD)/stage0.bin
 
 all: $(TARGET)
 
