@@ -7,12 +7,12 @@
 // https://github.com/dywoq/zero
 
 void bios_tt_output(char c) {
-    __asm volatile("movb %0, %%al\n\t"
-                   "movb $0x0E, %%ah\n\t"
-                   "int $0x10"
-                   :
-                   : "r"(c)
-                   : "ax");
+    __asm__ volatile("movb %0, %%al\n\t"
+                     "movb $0x0E, %%ah\n\t"
+                     "int $0x10"
+                     :
+                     : "r"(c)
+                     : "ax");
 }
 
 void bios_tt_str_output(const char *str) {
