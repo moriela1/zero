@@ -10,5 +10,6 @@
 #define _BIOS_H
 
 #include <bios/teletype.h>
+#include <bios/vga.h>
 
 #endif
