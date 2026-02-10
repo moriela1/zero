@@ -9,7 +9,7 @@
 #include <bios.h>
 
 [[noreturn]]
-void panic(const char *msg) {
+void zero_panic(const char *msg) {
     __asm__ volatile("cli\n"); // Disable interruptions
 
     bios_vga_mode_switch(0x03); // Automatically return to text mode
