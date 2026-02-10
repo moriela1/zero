@@ -4,7 +4,8 @@ CFLAGS := -m16 \
           -Iinc/ \
           -Wall -Wextra \
           -fno-pie -fno-pic \
-          --std=c23
+          --std=c23 \
+          -nostdlib
 
 LD := ld
 LD_FLAGS := -m elf_i386 -T linker.ld

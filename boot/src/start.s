@@ -31,13 +31,15 @@ _start:
     ; Unreachable
     hlt
 
+
 kernel_dap:
-    db 16 ; Size of DAP
-    db 0 ; Unused (I'm not even sure what does this mean...)
-    dw 1 ; How much sectors we read (512 bytes = 1 sector. If the kernel grows, we adjust it)
-    dw 0x0000 ; Offset
-    dw 0x1000 ; Segment
-    dq 1 ; Lower bits of LBA address
+    db 0x10        ; size of DAP
+    db 0x00        ; reserved
+    dw 8           ; sectors
+    dw 0x0000      ; offset
+    dw 0x1000      ; segment
+    dq 0x00000001 
+
 
 times 510-($-$$) db 0
 dw 0xaa55

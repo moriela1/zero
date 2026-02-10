@@ -11,10 +11,10 @@
 
 // A thin wrapper around BIOS interruption 0x10.
 // Switches to new given VGA mode.
-// 
+//
 // Parameters:
 // - mode: A new VGA mode.
-// 
+//
 // Returns:
 // - None
 void bios_vga_mode_switch(unsigned char mode);
