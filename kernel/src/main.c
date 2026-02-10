@@ -1,17 +1,7 @@
-// Copyright 2026 dywoq
-//
-// This code is published under Apache License 2.0:
-// http://www.apache.org/licenses/LICENSE-2.0
-//
-// The repository:
-// https://github.com/dywoq/zero
-
-#include <zero/types.h>
-
-[[noreturn]]
-void
-_start() {
-    while (true) {
-        __asm volatile("hlt");
-    }
+void _start() {
+    __asm volatile("mov $65, %al\n"
+                   "mov $0x0E, %ah\n"
+                   "int $0x10\n");
+    while (1)
+        ;
 }

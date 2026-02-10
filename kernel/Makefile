@@ -1,5 +1,5 @@
 CC := gcc
-CFLAGS := -m32 \
+CFLAGS := -m16 \
           -ffreestanding \
           -Iinc/ \
           -I../shared/inc/ \
