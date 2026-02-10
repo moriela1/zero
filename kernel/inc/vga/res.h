@@ -6,11 +6,13 @@
 // The repository:
 // https://github.com/dywoq/zero
 
-[[noreturn, gnu::section(".kernel_init")]] void
-_start();
+#ifndef _VGA_RES_H
+#define _VGA_RES_H
 
-void
-_start() {
-    while (1)
-        ;
-}
+#include <types.h>
+
+// VGA resolution (0x13 mode).
+static constexpr int VGA_RES_WIDTH = 320;
+static constexpr int VGA_RES_HEIGHT = 200;
+
+#endif

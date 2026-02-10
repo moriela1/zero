@@ -6,11 +6,11 @@
 // The repository:
 // https://github.com/dywoq/zero
 
-[[noreturn, gnu::section(".kernel_init")]] void
-_start();
+#ifndef _VGA_H
+#define _VGA_H
 
-void
-_start() {
-    while (1)
-        ;
-}
+#include <vga/color.h>
+#include <vga/pixel.h>
+#include <vga/res.h>
+
+#endif
