@@ -32,9 +32,9 @@ _start:
     hlt
 
 kernel_dap:
-    db 0 ; Size of DAP
+    db 16 ; Size of DAP
     db 0 ; Unused (I'm not even sure what does this mean...)
-    dw 1 ; How much sectors we read (512 bytes = 1 sector. If the stage 1 grows, we adjust it)
+    dw 1 ; How much sectors we read (512 bytes = 1 sector. If the kernel grows, we adjust it)
     dw 0x0000 ; Offset
     dw 0x1000 ; Segment
     dq 1 ; Lower bits of LBA address
