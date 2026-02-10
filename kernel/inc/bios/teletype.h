@@ -19,4 +19,16 @@
 // - None
 void bios_tt_output(char c);
 
+// Iterates over given immutable string,
+// printing every character with bios_tt_output.
+//
+// If it encounters \n, the function prints \r and \n.
+//
+// Parameters:
+// - str: A string to print.
+//
+// Returns:
+// - None
+void bios_tt_str_output(const char *str);
+
 #endif

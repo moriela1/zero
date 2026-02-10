@@ -14,3 +14,15 @@ void bios_tt_output(char c) {
                    : "r"(c)
                    : "ax");
 }
+
+void bios_tt_str_output(const char *str) {
+    for (const char *p = str; *p != '\0'; ++p) {
+        char c = *p;
+        if (c == '\n') {
+            bios_tt_output('\r');
+            bios_tt_output('\n');
+            continue;
+        }
+        bios_tt_output(c);
+    }
+}
