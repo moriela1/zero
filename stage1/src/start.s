@@ -27,7 +27,7 @@ _start:
 kernel_dap:
     db 0x10 ; Size of DAP
     db 0 ; Unused
-    dw 3 ; How much sectors we read (512 bytes = 1 sector. If kernel grows, we adjust it)
+    dw 8 ; How much sectors we read (512 bytes = 1 sector. If kernel grows, we adjust it)
     dw 0x0000 ; Offset
     dw 0x1000 ; Segment
     dq 2 ; Lower bits of LBA address
