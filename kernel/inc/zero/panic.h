@@ -11,6 +11,11 @@
 
 #include <types.h>
 
+// Panics, printing a message into the screen and halting.
+// The max rows of panic message is 10.
+//
+// Parameters:
+// - msg: A panic message.
 [[noreturn]]
 void
 zero_panic(const char *msg);

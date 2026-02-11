@@ -6,8 +6,6 @@
 // The repository:
 // https://github.com/dywoq/zero
 
-#include <vga.h>
-
 [[noreturn, gnu::section(".kernel_init")]] void
 _start();
 
