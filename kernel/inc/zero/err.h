@@ -15,6 +15,7 @@
 // It's the main way to report failures in functions.
 enum zero_err : ushort_t {
     ZERO_ERR_OK = 0,
+    ZERO_ERR_TASK_OVERFLOW = 1,
 };
 
 #endif
