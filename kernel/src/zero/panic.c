@@ -6,7 +6,6 @@
 // The repository:
 // https://github.com/dywoq/zero
 
-#include "vga/res.h"
 #include <types.h>
 #include <vga.h>
 
