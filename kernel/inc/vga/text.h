@@ -10,6 +10,7 @@
 #define _VGA_TEXT_H
 
 #include <types.h>
+#include <vga/color.h>
 
 // Draws a character to specific row and column, with given color.
 //
