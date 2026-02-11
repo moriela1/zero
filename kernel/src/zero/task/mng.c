@@ -8,6 +8,7 @@
 
 #include <types.h>
 #include <zero/err.h>
+#include <zero/panic.h>
 #include <zero/task/mng.h>
 #include <zero/task/task.h>
 
