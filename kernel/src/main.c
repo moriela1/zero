@@ -6,11 +6,16 @@
 // The repository:
 // https://github.com/dywoq/zero
 
+
 [[noreturn, gnu::section(".kernel_init")]] void
 _start();
 
 void
 _start() {
+
+
+    
+
     while (1)
         ;
 }

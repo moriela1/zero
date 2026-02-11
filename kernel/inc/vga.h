@@ -10,8 +10,6 @@
 #define _VGA_H
 
 #include <vga/color.h>
-#include <vga/gm.h>
-#include <vga/pixel.h>
 #include <vga/res.h>
 
 #endif

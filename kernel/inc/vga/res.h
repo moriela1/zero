@@ -12,7 +12,7 @@
 #include <types.h>
 
 // VGA resolution (0x13 mode).
-static constexpr int VGA_RES_WIDTH = 320;
-static constexpr int VGA_RES_HEIGHT = 200;
+static constexpr int VGA_RES_WIDTH = 80;
+static constexpr int VGA_RES_HEIGHT = 25;
 
 #endif

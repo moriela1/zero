@@ -15,7 +15,7 @@
 ; Returns: None
 ; Registers affected: AX
 video_setup:
-    mov ax, 13h
+    mov ax, 0x03
     int 0x10
     ret
 
