@@ -11,5 +11,6 @@
 
 #include <vga/color.h>
 #include <vga/res.h>
+#include <vga/text.h>
 
 #endif
